@@ -1,0 +1,5 @@
+﻿@model IEnumerable<Employee>
+@foreach (var item in Model) {
+      <p> @Html.DisplayFor(modelItem => item.EmployeeId) - @Html.DisplayFor(modelItem => item.EmployeeName)  </p>
+    
+}

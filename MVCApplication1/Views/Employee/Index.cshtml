@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Employee>
+<p>Hello World!</p>
+
+@if (1 > 0)
+{
+    <p>Success!</p>
+}
+else{
+    <p>Failure</p>
+}
+
+@foreach (var item in Model) {
+      <p> @Html.DisplayFor(modelItem => item.EmployeeId) - @Html.DisplayFor(modelItem => item.EmployeeName)  </p>
+    
+}
+<p>@Html.ActionLink("Employee Details","List","Employee")</p>
+
+@using (Html.BeginForm("Save","Employee",FormMethod.Post))
+{
+    @Html.Label("Employee Id:")
+    @Html.TextBox("EmployeeId")
+    @Html.Label("Employee Name:")
+    @Html.TextBox("EmployeeName")
+    @Html.Label("Employee City:")
+    @Html.TextArea("EmployeeCity")
+    <input type="submit" value="Save" />
+}
+
+
+
+
